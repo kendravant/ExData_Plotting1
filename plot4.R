@@ -14,7 +14,7 @@ df$DateTime <- strptime(df$DateTime,"%d/%m/%Y %T")
 
 
 # Create the plot and send it to a png file
-png(file = "ExData_Plotting1/plot3.png")
+png(file = "ExData_Plotting1/plot4.png")
 
   par(mfrow = c(2,2))
   
@@ -38,7 +38,8 @@ png(file = "ExData_Plotting1/plot3.png")
   with(df, lines(DateTime, Sub_metering_1,col="black"))
   with(df, lines(DateTime, Sub_metering_2,col="red"))
   with(df, lines(DateTime, Sub_metering_3,col="blue"))
-  legend(1,1, lty = 1, col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+  legend("topright", lty = 1, bty = "n", cex = 0.9, 
+         col = c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
   
   # Bottom right
   with(df, plot(DateTime, Global_reactive_power,type="n",
